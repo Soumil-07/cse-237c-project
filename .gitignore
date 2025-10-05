@@ -2,7 +2,6 @@
 **/*.proj/
 **/*.comp/
 **/logs/
-*.rpt
 *.tcl
 *.log
 out.dat
