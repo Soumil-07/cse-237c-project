@@ -25,8 +25,8 @@ void fir (
 		acc_t acc;
 		int i;
 
-        #pragma HLS array_partition variable=c factor=2 block 
-        #pragma HLS array_partition variable=shift_reg factor=2 block
+        #pragma HLS array_partition variable=c complete 
+        #pragma HLS array_partition variable=shift_reg complete
 	//acc = 0;
 	//Shift_Accum_Loop:
 	//for (i = N - 1; i >= 0; i--){

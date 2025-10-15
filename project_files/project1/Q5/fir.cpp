@@ -39,7 +39,7 @@ void fir (
 	//}
 	TDL:
 	for (i = N - 1; i > 0; i--){
-		#pragma HLS unroll
+		#pragma HLS unroll 
 		shift_reg[i] = shift_reg[i - 1];
 	}
 
@@ -49,7 +49,7 @@ void fir (
 	acc = 0;
 	MAC:
 	for (i = N - 1; i >= 0; i--){
-		#pragma HLS unroll
+		#pragma HLS unroll 
 		acc += shift_reg[i] * c[i];
 	}
 
