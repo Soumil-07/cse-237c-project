@@ -1,6 +1,0 @@
-# hls projects
-**/*.proj/
-**/*.comp/
-**/logs/
-out.dat
-workspace/
