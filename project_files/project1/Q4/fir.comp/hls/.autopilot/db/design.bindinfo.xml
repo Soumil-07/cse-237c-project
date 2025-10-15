@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="i_fu_108_p2" SOURCE="fir.cpp:33" VARIABLE="i" MODULE="fir_Pipeline_VITIS_LOOP_31_1" LOOP="VITIS_LOOP_31_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mul" ID="" IMPL="auto" LATENCY="1" OPTYPE="mul" PRAGMA="" RTLNAME="mul_6s_32s_32_2_1_U1" SOURCE="fir.cpp:34" VARIABLE="mul_ln34" MODULE="fir_Pipeline_VITIS_LOOP_31_1" LOOP="VITIS_LOOP_31_1" BUNDLEDNAME="" DSP="2" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="acc_fu_133_p2" SOURCE="fir.cpp:34" VARIABLE="acc" MODULE="fir_Pipeline_VITIS_LOOP_31_1" LOOP="VITIS_LOOP_31_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op seteq" ID="" IMPL="auto" LATENCY="0" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln31_fu_119_p2" SOURCE="fir.cpp:31" VARIABLE="icmp_ln31" MODULE="fir_Pipeline_VITIS_LOOP_31_1" LOOP="VITIS_LOOP_31_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="storage" DISPLAY="bind_storage rom_1p" ID="" IMPL="auto" LATENCY="1" OPTYPE="rom_1p" PRAGMA="" RTLNAME="fir_int_int_c_U" SOURCE="" VARIABLE="fir_int_int_c" MODULE="fir_Pipeline_VITIS_LOOP_31_1" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="1" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE="32 128 1"/>
+	<BindNode BINDTYPE="storage" DISPLAY="bind_storage ram_s2p" ID="" IMPL="auto" LATENCY="1" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="shift_reg_U" SOURCE="" VARIABLE="shift_reg" MODULE="fir" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="1" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE="32 128 1"/>
+</BindInfo>
