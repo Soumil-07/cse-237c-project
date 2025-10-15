@@ -1,31 +1,32 @@
 /*
-	Filename: fir.cpp
-		FIR lab wirtten for WES/CSE237C class at UCSD.
-		Match filter
-	INPUT:
-		x: signal (chirp)
+Filename: fir.cpp
+FIR lab wirtten for WES/CSE237C class at UCSD.
+Match filter
+INPUT:
+x: signal (chirp)
 
-	OUTPUT:
-		y: filtered output
+OUTPUT:
+y: filtered output
 
 */
 
 #include "fir.h"
 
 void fir (
-  data_t *y,
-  data_t x
-  )
+		data_t *y,
+		data_t x
+	 )
 {
-
 	coef_t c[N] = {10, 11, 11, 8, 3, -3, -8, -11, -11, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -11, -11, -8, -3, 3, 8, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 8, 3, -3, -8, -11, -11, -10, -10, -10, -10, -10, -10, -10, -10, -11, -11, -8, -3, 3, 8, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 8, 3, -3, -8, -11, -11, -10, -10, -10, -10, -10, -10, -10, -10, -11, -11, -8, -3, 3, 8, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
-	
+
 	// Write your code here
 	static
 		data_t shift_reg[N];
-		acc_t acc;
-		int i;
+	acc_t acc;
+	int i;
 
+#pragma HLS array_partition variable=c complete 
+#pragma HLS array_partition variable=shift_reg complete
 	//acc = 0;
 	//Shift_Accum_Loop:
 	//for (i = N - 1; i >= 0; i--){
@@ -37,9 +38,9 @@ void fir (
 	//		acc += shift_reg[i] * c[i];
 	//	}
 	//}
-	TDL:
+TDL:
 	for (i = N - 1; i > 0; i--){
-		#pragma HLS unroll 
+#pragma HLS unroll factor=2
 		shift_reg[i] = shift_reg[i - 1];
 	}
 
@@ -47,9 +48,9 @@ void fir (
 	shift_reg[0] = x;
 
 	acc = 0;
-	MAC:
+MAC:
 	for (i = N - 1; i >= 0; i--){
-		#pragma HLS unroll 
+#pragma HLS unroll factor=2
 		acc += shift_reg[i] * c[i];
 	}
 
