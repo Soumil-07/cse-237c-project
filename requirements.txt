@@ -1,4 +1,0 @@
-Sphinx==3.4.3
-nbsphinx
-sphinx_rtd_theme
-docutils<0.18
